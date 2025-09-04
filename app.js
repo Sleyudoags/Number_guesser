@@ -34,6 +34,11 @@ game.addEventListener('mousedown', function(e){
       
 // Listen for guess
 guessBtn.addEventListener('click', function(){
+  
+  //check if we are in play again mode 
+  if(this.className === 'play-again'){
+    return;  //exit early to prevent the game logic from running again 
+  }
   let guess = parseInt(guessInput.value);
   
   // Validate
